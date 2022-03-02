@@ -17,7 +17,7 @@ class App {
         this.port = port;
 
         // Initialization methods for the server here
-        // this.initializeDatabaseConnection();
+        this.initializeDatabaseConnection();
         this.initializeMiddleware();
         this.initializeControllers(controllers);
         this.initializeErrorHandling();
@@ -46,7 +46,11 @@ class App {
     private initializeDatabaseConnection(): void {
         const { MONGO_URI } = process.env;
 
-        mongoose.connect(`${MONGO_URI}`);
+        mongoose.connect(`${MONGO_URI}`).then(() => {
+            console.log('Database Connected');
+        }).catch((error: any) => {
+            console.log(error);
+        })
     }
 
     // Create the server
