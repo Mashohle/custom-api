@@ -17,7 +17,7 @@ class App {
         this.port = port;
 
         // Initialization methods for the server here
-        this.initializeDatabaseConnection();
+        // this.initializeDatabaseConnection();
         this.initializeMiddleware();
         this.initializeControllers(controllers);
         this.initializeErrorHandling();
