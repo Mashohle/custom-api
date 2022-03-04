@@ -1,4 +1,4 @@
-import { Schema, Model, model } from 'mongoose';
+import { Schema, model } from 'mongoose';
 import PostDoc from '@/resources/post/post.interface';
 
 const PostSchema = new Schema(

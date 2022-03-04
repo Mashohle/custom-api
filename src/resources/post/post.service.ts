@@ -5,10 +5,12 @@ class PostService {
     private post = PostModel;
 
     /**
-     * Create a new post
+     * 
+     * @param title 
+     * @param body 
+     * @returns A new post 
      */
     public async create(title: string, body: string): Promise<PostDoc> {
-        console.log('withinn!!')
         try {
             const post = await this.post.create({ title, body})
 
